@@ -1,0 +1,117 @@
+{
+  "publisher": "hunghg255",
+  "name": "color-preview",
+  "displayName": "Color IntelliSense Preview",
+  "type": "commonjs",
+  "version": "0.0.9",
+  "private": true,
+  "packageManager": "pnpm@8.9.2",
+  "description": "Intelligent color-preview previewing and searching for VS Code",
+  "license": "MIT",
+  "homepage": "https://github.com/hunghg255/color-preview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hunghg255/color-preview"
+  },
+  "bugs": "https://github.com/hunghg255/color-preview/issues",
+  "keywords": [
+    "color",
+    "preview"
+  ],
+  "sponsor": {
+    "url": "https://github.com/sponsors/hunghg255"
+  },
+  "preview": true,
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "main": "dist/index.js",
+  "icon": "res/logo.webp",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "activationEvents": [
+    "workspaceContains:package.json",
+    "onLanguage:vue",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:handlebars",
+    "onLanguage:svelte",
+    "onLanguage:html",
+    "onLanguage:pug",
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "color-preview.toggle-annotations",
+        "category": "color-preview",
+        "title": "Toggle Annotations"
+      },
+      {
+        "command": "color-preview.clear-cache",
+        "category": "color-preview",
+        "title": "Clear icon cache"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "color-preview IntelliSense",
+      "properties": {
+        "color-preview.annotations": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enabled color-preview inline annotations"
+        },
+        "color-preview.languageIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "svelte",
+            "html",
+            "pug"
+          ],
+          "description": "Array of language IDs to enable annotations"
+        },
+        "color-preview.colorDirectoryPath": {
+          "type": "string",
+          "description": "Color file directory path",
+          "default": null
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "esno scripts/build.ts",
+    "dev": "pnpm build -- --watch",
+    "lint": "eslint .",
+    "release": "bumpp --tag --push --commit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.0.0-beta.29",
+    "@types/fs-extra": "^11.0.3",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.8.9",
+    "@types/vscode": "^1.83.1",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@vue/reactivity": "^3.3.7",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.52.0",
+    "esno": "^0.17.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "fs-extra": "^11.1.1"
+  }
+}
