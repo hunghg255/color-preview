@@ -1,3 +1,4 @@
 {
-  "color-preview.colorDirectoryPath": "./test/fixture/styles/color.json"
+  "color-preview.annotations": true,
+  "color-preview.colorDirectoryPath": "./colors/color.json"
 }
