@@ -4,7 +4,7 @@ import { colorStore, config } from './config'
 import { getColorInfoMarkdown } from './markdown'
 
 export function RegisterCompletion(ctx: ExtensionContext) {
-  const REGEX_COLLECTION = /color=['"][\w-]*$/
+  const REGEX_COLLECTION = /(color|class|className)=['"][\w-]*$/
   const REGEX_COLLECTION_CSS = /var\([\w-]*$/
   let provider: any
 

@@ -72,8 +72,8 @@ export async function onConfigUpdated() {
 
 export const color = computed(() => {
   return isDarkTheme()
-    ? 'eee'
-    : '222'
+    ? '#eee'
+    : '#222'
 })
 
 // First try the activeColorThemeKind (if available) otherwise apply regex on the color theme's name
