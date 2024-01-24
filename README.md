@@ -17,3 +17,22 @@
 
 ## Config `.vscode/settings.json`
 
+```json
+// reload
+  "color-preview.annotations": true,
+ "color-preview.colorDirectoryPath": "./public/styles/color.json"
+```
+
+```json
+// color.json
+{
+  "light: {
+    "primary": "#000",
+    "secondary": "#fff"
+  },
+  "dark": {
+    "primary": "#fff",
+    "secondary": "#000"
+  }
+}
+```
